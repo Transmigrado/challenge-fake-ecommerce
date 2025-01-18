@@ -41,6 +41,10 @@ android {
 
 dependencies {
 
+    implementation("org.reduxkotlin:redux-kotlin-threadsafe-jvm:0.6.0")
+    implementation("org.reduxkotlin:redux-kotlin-compose-jvm:0.6.0")
+    implementation("org.reduxkotlin:redux-kotlin-thunk-jvm:0.6.0")
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
