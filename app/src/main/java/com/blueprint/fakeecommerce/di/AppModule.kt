@@ -20,7 +20,7 @@ class AppModule {
     }
 
     @Provides
-    fun provideSearchUserUseCase(apiService: ApiService): GetProductsUseCase {
+    fun provideGetProductsUseCase(apiService: ApiService): GetProductsUseCase {
         return GetProductsUseCase(apiService)
     }
 
