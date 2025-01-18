@@ -4,11 +4,13 @@ import org.reduxkotlin.Reducer
 import org.reduxkotlin.typedReducer
 
 data class AppState(
-    val productsState: ProductsState = ProductsState()
+    val productsState: ProductsState = ProductsState(),
+    val productsCartState: ProductsCartState = ProductsCartState()
 )
 
 val RootReducer: Reducer<AppState> = typedReducer<AppState, Any> { state, action ->
     AppState(
-        productsState = ProductsReducer(state.productsState, action)
+        productsState = ProductsReducer(state.productsState, action),
+        productsCartState = ProductsCartReducer(state.productsCartState, action)
     )
 }
