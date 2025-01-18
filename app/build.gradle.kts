@@ -41,6 +41,11 @@ android {
 
 dependencies {
 
+
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.okhttp3:okhttp:4.9.0")
+
     implementation("org.reduxkotlin:redux-kotlin-threadsafe-jvm:0.6.0")
     implementation("org.reduxkotlin:redux-kotlin-compose-jvm:0.6.0")
     implementation("org.reduxkotlin:redux-kotlin-thunk-jvm:0.6.0")
