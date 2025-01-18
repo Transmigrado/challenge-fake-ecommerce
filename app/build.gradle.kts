@@ -7,9 +7,6 @@ plugins {
     id("dagger.hilt.android.plugin")
 }
 
-
-
-
 android {
     namespace = "com.blueprint.fakeecommerce"
     compileSdk = 35
@@ -58,8 +55,16 @@ dependencies {
 
     //hilt
     implementation("com.google.dagger:hilt-android:2.48")
+    testImplementation(libs.testng)
     kapt("com.google.dagger:hilt-android-compiler:2.47")
     implementation("androidx.hilt:hilt-navigation-compose:1.1.0")
+
+    testImplementation("org.mockito:mockito-core:4.6.1")
+    testImplementation("org.mockito:mockito-inline:4.6.1")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.0")
+
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.8.0-RC2")
+    testImplementation("io.mockk:mockk:1.13.9")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
