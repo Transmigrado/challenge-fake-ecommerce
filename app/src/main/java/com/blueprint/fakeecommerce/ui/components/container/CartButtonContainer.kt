@@ -16,7 +16,6 @@ fun CartButtonContainer(product: Product) {
     val productsInCart by selectState<AppState, HashMap<Int, Int>> { productsCartState.productsInCart }
     val countInCart = productsInCart[product.id] ?: 0
 
-
     CartButton(countInCart, onIncrement = {
         dispatch(ProductsCartAction.AddProduct(product))
     }, onDecrement = {

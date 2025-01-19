@@ -1,7 +1,7 @@
 package com.blueprint.fakeecommerce.ui.components
 
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.runtime.Composable
@@ -13,8 +13,9 @@ import com.blueprint.fakeecommerce.model.Product
 fun ProductGrid(products: List<Product>) {
     LazyVerticalGrid(
         columns = GridCells.Fixed(2),
-        modifier = Modifier.fillMaxSize(),
-        contentPadding = PaddingValues(8.dp)
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(horizontal = 4.dp)
     ) {
         items(products.size) { index ->
             val product = products[index]

@@ -6,6 +6,7 @@ import org.reduxkotlin.typedReducer
 
 data class CategoryState(
     val isLoading: Boolean = false,
+    val selectedCategory: String? = null,
     var list: List<String> = emptyList()
 )
 

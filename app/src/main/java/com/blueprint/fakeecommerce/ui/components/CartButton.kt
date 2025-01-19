@@ -18,6 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 @Composable
 fun CartButton(count: Int, onIncrement: () -> Unit, onDecrement: () -> Unit) {
@@ -25,7 +26,6 @@ fun CartButton(count: Int, onIncrement: () -> Unit, onDecrement: () -> Unit) {
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.Center,
         modifier = Modifier
-            .padding(16.dp)
             .clip(RoundedCornerShape(8.dp))
             .border(1.dp,  Color.Blue, RoundedCornerShape(8.dp))
     ) {
@@ -35,7 +35,7 @@ fun CartButton(count: Int, onIncrement: () -> Unit, onDecrement: () -> Unit) {
                 Icon(
                     imageVector = Icons.Default.Delete,
                     contentDescription = "Remove item",
-                    tint = Color.White
+                    tint = Color.Blue
                 )
             }
         }
@@ -44,8 +44,9 @@ fun CartButton(count: Int, onIncrement: () -> Unit, onDecrement: () -> Unit) {
         if (count > 0) {
             Text(
                 text = count.toString(),
-                style = MaterialTheme.typography.bodySmall,
-                modifier = Modifier.padding(horizontal = 16.dp)
+                style = MaterialTheme.typography.bodyLarge,
+                modifier = Modifier.padding(horizontal = 16.dp),
+                fontSize = 16.sp
             )
         }
 
@@ -54,7 +55,7 @@ fun CartButton(count: Int, onIncrement: () -> Unit, onDecrement: () -> Unit) {
             Icon(
                 imageVector = Icons.Default.Add,
                 contentDescription = "Add item",
-                tint = Color.White
+                tint = Color.Blue
             )
         }
     }

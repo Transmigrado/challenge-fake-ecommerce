@@ -7,8 +7,8 @@ import com.blueprint.fakeecommerce.ui.components.container.ProductGridContainer
 
 @Composable
 fun HomeScreen(navController: NavHostController) {
-    MainDrawer(navController){
-        ProductGridContainer()
+    MainDrawer(navController){ innerPadding ->
+        ProductGridContainer(innerPadding)
     }
 }
 

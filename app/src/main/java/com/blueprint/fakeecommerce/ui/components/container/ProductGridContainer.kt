@@ -1,9 +1,13 @@
 package com.blueprint.fakeecommerce.ui.components.container
 
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import com.blueprint.fakeecommerce.di.ProductsThunkEntryPoint
 import com.blueprint.fakeecommerce.model.Product
@@ -14,7 +18,7 @@ import org.reduxkotlin.compose.rememberDispatcher
 import org.reduxkotlin.compose.selectState
 
 @Composable
-fun ProductGridContainer() {
+fun ProductGridContainer(innerPadding: PaddingValues) {
 
     val context = LocalContext.current
     val thunk = remember {
@@ -29,6 +33,10 @@ fun ProductGridContainer() {
         dispatch(thunk.getProducts())
     }
 
-    ProductGrid(products)
+    Box(
+        modifier = Modifier.padding(innerPadding)
+    ){
+        ProductGrid(products)
+    }
 
 }
