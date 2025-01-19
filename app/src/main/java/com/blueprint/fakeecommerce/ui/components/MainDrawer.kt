@@ -15,6 +15,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.navigation.NavHostController
 import com.blueprint.fakeecommerce.ui.components.container.CartBadgeButtonContainer
 import com.blueprint.fakeecommerce.ui.components.container.CategoryListContainer
 import kotlinx.coroutines.launch
@@ -22,8 +23,10 @@ import kotlinx.coroutines.launch
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainDrawer(
+    navController: NavHostController,
     content: @Composable (PaddingValues) -> Unit
 ) {
+
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val scope = rememberCoroutineScope()
 
@@ -53,7 +56,7 @@ fun MainDrawer(
                         }
                     },
                     actions = {
-                        CartBadgeButtonContainer()
+                        CartBadgeButtonContainer(navController)
                     }
 
                 )

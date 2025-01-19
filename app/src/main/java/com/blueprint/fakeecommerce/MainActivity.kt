@@ -6,7 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import com.blueprint.fakeecommerce.store.reducers.AppState
 import com.blueprint.fakeecommerce.store.reducers.RootReducer
-import com.blueprint.fakeecommerce.ui.screens.HomeScreen
+import com.blueprint.fakeecommerce.ui.screens.RootScreen
 import com.blueprint.fakeecommerce.ui.theme.FakeECommerceTheme
 import org.reduxkotlin.applyMiddleware
 import org.reduxkotlin.compose.StoreProvider
@@ -29,7 +29,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             FakeECommerceTheme {
                 StoreProvider(store) {
-                    HomeScreen()
+                    RootScreen()
                 }
             }
         }
