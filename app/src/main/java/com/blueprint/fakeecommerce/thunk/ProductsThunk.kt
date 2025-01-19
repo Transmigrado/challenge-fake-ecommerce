@@ -16,6 +16,8 @@ class ProductsThunk(
     @OptIn(DelicateCoroutinesApi::class)
     override fun getProducts(): Thunk<AppState> = { dispatch, _, _ ->
 
+        dispatch(ProductsAction.Fetch)
+
         GlobalScope.launch {
 
             val products = useCase.fetchProducts()

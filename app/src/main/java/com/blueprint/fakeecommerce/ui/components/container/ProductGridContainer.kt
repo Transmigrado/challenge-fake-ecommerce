@@ -26,6 +26,7 @@ fun ProductGridContainer(innerPadding: PaddingValues) {
     }
 
     val products by selectState<AppState, List<Product>> { productsState.list }
+    val isLoading by selectState<AppState, Boolean> { productsState.isLoading }
 
     val dispatch = rememberDispatcher()
 
@@ -36,7 +37,7 @@ fun ProductGridContainer(innerPadding: PaddingValues) {
     Box(
         modifier = Modifier.padding(innerPadding)
     ){
-        ProductGrid(products)
+        ProductGrid(products, isLoading)
     }
 
 }
