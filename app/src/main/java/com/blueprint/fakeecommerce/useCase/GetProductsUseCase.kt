@@ -11,12 +11,10 @@ import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
 import kotlin.coroutines.suspendCoroutine
 
-
 class GetProductsUseCase(private val apiService: ApiService): GetProductsUseCaseInterface {
-    override suspend fun fetchProducts(): List<Product> =
-        suspendCoroutine { cont ->
-            val call = apiService.getProducts()
 
+    private suspend fun fetchDataFromApi(call: Call<MutableList<Product>>): List<Product> =
+        suspendCoroutine { cont ->
             call.enqueue(object : Callback<MutableList<Product>> {
                 override fun onResponse(
                     call: Call<MutableList<Product>>,
@@ -34,4 +32,10 @@ class GetProductsUseCase(private val apiService: ApiService): GetProductsUseCase
                 }
             })
         }
+
+    override suspend fun fetchProducts(): List<Product> =
+        fetchDataFromApi(apiService.getProducts())
+
+    override suspend fun fetchProductsByCategory(category: String): List<Product> =
+        fetchDataFromApi(apiService.getProductsByCategory(category))
 }

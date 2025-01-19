@@ -25,7 +25,7 @@ fun CategoryListContainer() {
     }
 
     LaunchedEffect(Unit) {
-        dispatch(thunk.getProducts())
+        dispatch(thunk.getCategories())
     }
 
     CategoryList(categories)
