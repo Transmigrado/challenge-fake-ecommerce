@@ -14,7 +14,7 @@ fun CartBadgeButtonContainer(navController: NavHostController) {
     val totalSum = productsInCart.values.sum()
 
     CartBadgeButton(totalSum) {
-        navController.navigate("productDetail")
+        navController.navigate("shoppingCartDetail")
     }
 
 }
