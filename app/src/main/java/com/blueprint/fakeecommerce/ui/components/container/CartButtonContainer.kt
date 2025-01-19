@@ -5,7 +5,7 @@ import androidx.compose.runtime.getValue
 import com.blueprint.fakeecommerce.model.Product
 import com.blueprint.fakeecommerce.store.actions.ProductsCartAction
 import com.blueprint.fakeecommerce.store.reducers.AppState
-import com.blueprint.fakeecommerce.ui.components.CartButton
+import com.blueprint.fakeecommerce.ui.components.buttons.CartButton
 import org.reduxkotlin.compose.rememberDispatcher
 import org.reduxkotlin.compose.selectState
 

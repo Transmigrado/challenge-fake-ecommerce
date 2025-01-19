@@ -1,4 +1,4 @@
-package com.blueprint.fakeecommerce.ui.components
+package com.blueprint.fakeecommerce.ui.components.utils
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.shape.RoundedCornerShape

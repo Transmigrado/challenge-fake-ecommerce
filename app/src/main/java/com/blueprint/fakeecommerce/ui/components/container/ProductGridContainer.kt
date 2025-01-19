@@ -12,7 +12,7 @@ import androidx.compose.ui.platform.LocalContext
 import com.blueprint.fakeecommerce.di.ProductsThunkEntryPoint
 import com.blueprint.fakeecommerce.model.Product
 import com.blueprint.fakeecommerce.store.reducers.AppState
-import com.blueprint.fakeecommerce.ui.components.ProductGrid
+import com.blueprint.fakeecommerce.ui.components.groups.ProductGrid
 import dagger.hilt.android.EntryPointAccessors
 import org.reduxkotlin.compose.rememberDispatcher
 import org.reduxkotlin.compose.selectState

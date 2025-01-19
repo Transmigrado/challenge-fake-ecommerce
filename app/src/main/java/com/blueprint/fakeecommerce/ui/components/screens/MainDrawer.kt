@@ -1,4 +1,4 @@
-package com.blueprint.fakeecommerce.ui.components
+package com.blueprint.fakeecommerce.ui.components.screens
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.material.icons.Icons

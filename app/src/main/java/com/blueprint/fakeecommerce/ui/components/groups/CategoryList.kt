@@ -1,4 +1,4 @@
-package com.blueprint.fakeecommerce.ui.components
+package com.blueprint.fakeecommerce.ui.components.groups
 
 
 import androidx.compose.foundation.layout.Spacer
@@ -14,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.blueprint.fakeecommerce.R
+import com.blueprint.fakeecommerce.ui.components.items.CategoryRow
 
 @Composable
 fun CategoryList(categories: List<String>) {

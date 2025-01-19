@@ -1,4 +1,4 @@
-package com.blueprint.fakeecommerce.ui.components
+package com.blueprint.fakeecommerce.ui.components.items
 
 
 import androidx.compose.foundation.layout.Box
@@ -19,6 +19,7 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.blueprint.fakeecommerce.model.Product
 import com.blueprint.fakeecommerce.ui.components.container.CartButtonContainer
+import com.blueprint.fakeecommerce.ui.components.utils.Skeleteable
 
 @Composable
 fun ProductCard(product: Product, isLoading: Boolean = false) {

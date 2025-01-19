@@ -7,7 +7,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalContext
 import com.blueprint.fakeecommerce.di.CategoriesThunkEntryPoint
 import com.blueprint.fakeecommerce.store.reducers.AppState
-import com.blueprint.fakeecommerce.ui.components.CategoryList
+import com.blueprint.fakeecommerce.ui.components.groups.CategoryList
 import dagger.hilt.android.EntryPointAccessors
 import org.reduxkotlin.compose.rememberDispatcher
 import org.reduxkotlin.compose.selectState

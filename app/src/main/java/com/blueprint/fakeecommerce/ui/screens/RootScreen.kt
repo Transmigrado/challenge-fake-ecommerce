@@ -14,7 +14,7 @@ fun RootScreen() {
     NavHost(navController, startDestination = "home") {
         composable("home") { HomeScreen(navController) }
         composable("productDetail") { ProductDetailScreen() }
-        composable("shoppingCartDetail") { ShoppingCartDetailScreen() }
+        composable("shoppingCartDetail") { ShoppingCartDetailScreen(navController) }
     }
 
 }

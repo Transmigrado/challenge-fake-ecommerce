@@ -1,4 +1,4 @@
-package com.blueprint.fakeecommerce.ui.components
+package com.blueprint.fakeecommerce.ui.components.groups
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -9,6 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.blueprint.fakeecommerce.model.Product
 import com.blueprint.fakeecommerce.model.Rating
+import com.blueprint.fakeecommerce.ui.components.items.ProductCard
 
 @Composable
 fun ProductGrid(products: List<Product>, isLoading: Boolean = false) {

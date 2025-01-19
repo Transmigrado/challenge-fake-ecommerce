@@ -1,4 +1,4 @@
-package com.blueprint.fakeecommerce.ui.components
+package com.blueprint.fakeecommerce.ui.components.buttons
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border

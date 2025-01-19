@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.navigation.NavHostController
 import com.blueprint.fakeecommerce.store.reducers.AppState
-import com.blueprint.fakeecommerce.ui.components.CartBadgeButton
+import com.blueprint.fakeecommerce.ui.components.buttons.CartBadgeButton
 import org.reduxkotlin.compose.selectState
 
 @Composable

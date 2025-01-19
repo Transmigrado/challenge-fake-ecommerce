@@ -1,4 +1,4 @@
-package com.blueprint.fakeecommerce.ui.components
+package com.blueprint.fakeecommerce.ui.components.items
 
 import androidx.compose.material3.NavigationDrawerItem
 import androidx.compose.material3.Text
