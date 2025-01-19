@@ -2,6 +2,7 @@ package com.blueprint.fakeecommerce.di
 
 import com.blueprint.fakeecommerce.network.ApiClient.client
 import com.blueprint.fakeecommerce.network.ApiService
+import com.blueprint.fakeecommerce.thunk.CategoriesThunk
 import com.blueprint.fakeecommerce.thunk.ProductsThunk
 import com.blueprint.fakeecommerce.useCase.GetCategoriesUseCase
 import com.blueprint.fakeecommerce.useCase.GetProductsUseCase
@@ -34,7 +35,9 @@ class AppModule {
         return ProductsThunk(useCase)
     }
 
-    //@Provides
-    //fun provideCategoriesThunl(useCase: GetCategoriesUseCase): Cate
+    @Provides
+    fun provideCategoriesThunk(useCase: GetCategoriesUseCase): CategoriesThunk {
+        return CategoriesThunk(useCase)
+    }
 
 }

@@ -1,13 +1,12 @@
 package com.blueprint.fakeecommerce.store.reducers
 
-import com.blueprint.fakeecommerce.model.Category
 import com.blueprint.fakeecommerce.store.actions.CategoryAction
 import org.reduxkotlin.Reducer
 import org.reduxkotlin.typedReducer
 
 data class CategoryState(
     val isLoading: Boolean = false,
-    var list: List<Category> = emptyList()
+    var list: List<String> = emptyList()
 )
 
 val CategoriesReducer: Reducer<CategoryState> = typedReducer<CategoryState, CategoryAction> { state, action ->
