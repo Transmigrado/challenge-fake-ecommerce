@@ -1,11 +1,10 @@
 package com.blueprint.fakeecommerce.ui.components.container
 
-import androidx.compose.foundation.layout.Box
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import com.blueprint.fakeecommerce.model.Product
 import com.blueprint.fakeecommerce.store.reducers.AppState
-import com.blueprint.fakeecommerce.ui.components.groups.ProductGrid
+import com.blueprint.fakeecommerce.ui.components.groups.ProductList
 
 import org.reduxkotlin.compose.selectState
 
@@ -21,7 +20,5 @@ fun ProductListCartContainer(){
         quantityInCart > 0
     }
 
-    Box{
-        ProductGrid(filteredProducts, isLoading)
-    }
+    ProductList(filteredProducts, isLoading)
 }

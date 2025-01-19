@@ -62,5 +62,22 @@ class GetProductsUseCaseTest {
         assertEquals(mockProducts, result)
     }
 
+    @Test
+    fun `test fetchProducts by category - successful response`() = runTest {
+
+        val mockCall = mockk<Call<MutableList<Product>>>()
+
+        every { apiService.getProducts() } returns mockCall
+
+        coEvery { mockCall.enqueue(any()) } answers {
+            val callback = firstArg<Callback<MutableList<Product>>>()
+            callback.onResponse(mockCall, Response.success(mockProducts.toMutableList()))
+        }
+
+        val result = getProductsUseCase.fetchProductsByCategory("clothes")
+
+        assertEquals(mockProducts, result)
+    }
+
 
 }

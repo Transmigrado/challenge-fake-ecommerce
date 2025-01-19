@@ -5,10 +5,14 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 
 @Composable
-fun CategoryRow(title: String){
+fun CategoryRow(
+    selectedCategory: String?,
+    title: String,
+    isAllCategory: Boolean = false,
+    onClick: () -> Unit){
     NavigationDrawerItem(
         label = { Text(title) },
-        selected = false,
-        onClick = {  }
+        selected = selectedCategory == title || (selectedCategory == null && isAllCategory)  ,
+        onClick = onClick
     )
 }

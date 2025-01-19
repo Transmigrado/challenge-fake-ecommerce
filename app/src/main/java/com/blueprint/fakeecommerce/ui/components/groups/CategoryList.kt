@@ -17,7 +17,10 @@ import com.blueprint.fakeecommerce.R
 import com.blueprint.fakeecommerce.ui.components.items.CategoryRow
 
 @Composable
-fun CategoryList(categories: List<String>) {
+fun CategoryList(
+    selectedCategory: String?,
+    categories: List<String>,
+    onClick: (category: String) -> Unit) {
 
     LazyColumn(modifier = Modifier
         .padding(horizontal = 16.dp)
@@ -35,11 +38,15 @@ fun CategoryList(categories: List<String>) {
         }
 
         item {
-            CategoryRow(stringResource(R.string.drawer_all))
+            CategoryRow(selectedCategory,stringResource(R.string.drawer_all), isAllCategory = true, onClick = {
+                onClick("all")
+            })
         }
 
         items(categories.size){ index ->
-            CategoryRow(categories[index])
+            CategoryRow(selectedCategory,categories[index], onClick = {
+                onClick(categories[index])
+            })
         }
 
     }

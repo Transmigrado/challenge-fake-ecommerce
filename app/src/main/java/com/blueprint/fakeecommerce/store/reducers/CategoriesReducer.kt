@@ -15,5 +15,6 @@ val CategoriesReducer: Reducer<CategoryState> = typedReducer<CategoryState, Cate
         is CategoryAction.Fetch -> state.copy(isLoading = true)
         is CategoryAction.FetchError -> state.copy(isLoading = false)
         is CategoryAction.FetchSuccess -> state.copy(isLoading = false, list = action.categories)
+        is CategoryAction.SelectCategory -> state.copy(selectedCategory = action.category)
     }
 }

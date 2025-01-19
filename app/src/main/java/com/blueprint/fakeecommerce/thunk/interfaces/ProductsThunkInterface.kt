@@ -5,4 +5,5 @@ import org.reduxkotlin.thunk.Thunk
 
 interface ProductsThunkInterface {
     fun getProducts(): Thunk<AppState>
+    fun getProductsByCategory(category: String): Thunk<AppState>
 }
