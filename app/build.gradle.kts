@@ -53,6 +53,8 @@ dependencies {
     implementation("org.reduxkotlin:redux-kotlin-compose-jvm:0.6.0")
     implementation("org.reduxkotlin:redux-kotlin-thunk-jvm:0.6.0")
 
+    implementation("io.coil-kt:coil-compose:2.5.0")
+
     //hilt
     implementation("com.google.dagger:hilt-android:2.48")
     testImplementation(libs.testng)

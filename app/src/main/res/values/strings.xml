@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Fake ECommerce</string>
+
+    <string name="drawer_title">Descubre</string>
+    <string name="drawer_categories">Categorias</string>
+    <string name="drawer_all">Todos</string>
+
 </resources>

@@ -19,6 +19,25 @@ class GetProductsUseCaseTest {
 
     private lateinit var apiService: ApiService
     private lateinit var getProductsUseCase: GetProductsUseCase
+    private val mockProducts = listOf(
+        Product(
+            id = 1,
+            title = "Product 1",
+            price = 10.0f,
+            description = "Description",
+            category = "Category",
+            image = "imageUrl",
+            rating = Rating(0.0f, 0)),
+        Product(
+            id = 2,
+            title = "Product 2",
+            price = 15.0f,
+            description = "Description",
+            category = "Category",
+            image = "imageUrl",
+            rating = Rating(0.0f, 0))
+    )
+
 
     @Before
     fun setup() {
@@ -28,11 +47,6 @@ class GetProductsUseCaseTest {
 
     @Test
     fun `test fetchProducts - successful response`() = runTest {
-
-        val mockProducts = listOf(
-            Product(id = 1, title = "Product 1", price = 10.0f, description = "Description", category = "Category", image = "imageUrl", rating = Rating(0.0f, 0)),
-            Product(id = 2, title = "Product 2", price = 15.0f, description = "Description", category = "Category", image = "imageUrl", rating = Rating(0.0f, 0))
-        )
 
         val mockCall = mockk<Call<MutableList<Product>>>()
 

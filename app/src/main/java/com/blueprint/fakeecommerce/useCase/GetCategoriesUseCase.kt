@@ -1,7 +1,5 @@
 package com.blueprint.fakeecommerce.useCase
 
-
-import com.blueprint.fakeecommerce.model.Product
 import com.blueprint.fakeecommerce.network.ApiService
 import com.blueprint.fakeecommerce.useCase.interfaces.GetCategoriesUseCaseInterface
 import retrofit2.Call
@@ -10,7 +8,6 @@ import retrofit2.Response
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
 import kotlin.coroutines.suspendCoroutine
-
 
 class GetCategoriesUseCase(private val apiService: ApiService): GetCategoriesUseCaseInterface {
     override suspend fun fetchCategories(): List<String> =
@@ -32,8 +29,6 @@ class GetCategoriesUseCase(private val apiService: ApiService): GetCategoriesUse
                 override fun onFailure(call: Call<MutableList<String>>, t: Throwable) {
                     cont.resumeWithException(t)
                 }
-
-
             })
         }
 }
