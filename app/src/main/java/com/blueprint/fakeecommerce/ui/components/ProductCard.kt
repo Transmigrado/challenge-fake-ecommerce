@@ -29,7 +29,7 @@ fun ProductCard(product: Product) {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Image(
-                painter = painterResource(id = android.R.drawable.ic_menu_camera), // Usa una imagen real
+                painter = painterResource(id = android.R.drawable.ic_menu_camera),
                 contentDescription = "Product Image",
                 modifier = Modifier.size(100.dp),
                 contentScale = ContentScale.Crop
