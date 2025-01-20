@@ -1,7 +1,5 @@
 package com.blueprint.fakeecommerce.store.actions
 
-
-
 sealed interface CategoryAction {
     data object Fetch: CategoryAction
     data object FetchError: CategoryAction
