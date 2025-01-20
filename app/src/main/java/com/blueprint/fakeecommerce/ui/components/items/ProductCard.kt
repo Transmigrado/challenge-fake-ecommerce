@@ -1,6 +1,7 @@
 package com.blueprint.fakeecommerce.ui.components.items
 
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -22,13 +23,22 @@ import com.blueprint.fakeecommerce.ui.components.container.CartButtonContainer
 import com.blueprint.fakeecommerce.ui.components.utils.Skeleteable
 
 @Composable
-fun ProductCard(product: Product, isLoading: Boolean = false) {
+fun ProductCard(
+    product: Product,
+    isLoading: Boolean = false,
+    onClick: (product: Product) -> Unit
+    ) {
     Box(
         modifier = Modifier
             .padding(4.dp)
     ){
         Card(
             modifier = Modifier
+                .clickable {
+                    if(!isLoading) {
+                        onClick(product)
+                    }
+                }
                 .fillMaxWidth(),
             elevation = CardDefaults.cardElevation(4.dp)
         ) {

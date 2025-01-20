@@ -12,7 +12,11 @@ import com.blueprint.fakeecommerce.model.Rating
 import com.blueprint.fakeecommerce.ui.components.items.ProductCard
 
 @Composable
-fun ProductGrid(products: List<Product>, isLoading: Boolean = false) {
+fun ProductGrid(
+    products: List<Product>,
+    isLoading: Boolean = false,
+    onClickItem: (product: Product) -> Unit
+    ) {
     LazyVerticalGrid(
         columns = GridCells.Fixed(2),
         modifier = Modifier
@@ -30,12 +34,12 @@ fun ProductGrid(products: List<Product>, isLoading: Boolean = false) {
                     image = "",
                     rating = Rating(0.0f, 0)
                     )
-                ProductCard(product = product, isLoading = true)
+                ProductCard(product = product, isLoading = true, onClickItem)
             }
         } else {
             items(products.size) { index ->
                 val product = products[index]
-                ProductCard(product = product)
+                ProductCard(product = product, onClick = onClickItem)
             }
         }
     }

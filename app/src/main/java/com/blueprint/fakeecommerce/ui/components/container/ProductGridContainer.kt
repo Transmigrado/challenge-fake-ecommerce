@@ -9,8 +9,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.navigation.NavHostController
 import com.blueprint.fakeecommerce.di.ProductsThunkEntryPoint
 import com.blueprint.fakeecommerce.model.Product
+import com.blueprint.fakeecommerce.store.actions.ProductsAction
 import com.blueprint.fakeecommerce.store.reducers.AppState
 import com.blueprint.fakeecommerce.ui.components.groups.ProductGrid
 import dagger.hilt.android.EntryPointAccessors
@@ -18,7 +20,7 @@ import org.reduxkotlin.compose.rememberDispatcher
 import org.reduxkotlin.compose.selectState
 
 @Composable
-fun ProductGridContainer(innerPadding: PaddingValues) {
+fun ProductGridContainer(innerPadding: PaddingValues, navController: NavHostController) {
 
     val context = LocalContext.current
     val thunk = remember {
@@ -37,7 +39,10 @@ fun ProductGridContainer(innerPadding: PaddingValues) {
     Box(
         modifier = Modifier.padding(innerPadding)
     ){
-        ProductGrid(products, isLoading)
+        ProductGrid(products, isLoading, onClickItem = { product ->
+            dispatch(ProductsAction.SelectProduct(product))
+            navController.navigate("productDetail")
+        })
     }
 
 }

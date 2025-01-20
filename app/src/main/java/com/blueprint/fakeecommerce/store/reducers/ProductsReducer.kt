@@ -7,7 +7,8 @@ import org.reduxkotlin.typedReducer
 
 data class ProductsState(
     val isLoading: Boolean = false,
-    var list: List<Product> = emptyList()
+    val list: List<Product> = emptyList(),
+    val selectedProduct: Product? = null
 )
 
 val ProductsReducer: Reducer<ProductsState> = typedReducer<ProductsState, ProductsAction> { state, action ->
@@ -15,5 +16,6 @@ val ProductsReducer: Reducer<ProductsState> = typedReducer<ProductsState, Produc
         is ProductsAction.Fetch -> state.copy(isLoading = true)
         is ProductsAction.FetchError -> state.copy(isLoading = false)
         is ProductsAction.FetchSuccess -> state.copy(isLoading = false, list = action.products)
+        is ProductsAction.SelectProduct -> state.copy(selectedProduct = action.product)
     }
 }
