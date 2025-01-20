@@ -7,8 +7,8 @@ import com.blueprint.fakeecommerce.ui.components.container.ProductListCartContai
 
 @Composable
 fun ShoppingCartDetailScreen(navController: NavHostController) {
-    BasicScreen(navController) {
-        ProductListCartContainer()
+    BasicScreen(navController) {  innerPadding ->
+        ProductListCartContainer(innerPadding)
     }
 }
 

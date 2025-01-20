@@ -1,11 +1,13 @@
 package com.blueprint.fakeecommerce.store.reducers
 
+import com.blueprint.fakeecommerce.model.Product
 import com.blueprint.fakeecommerce.store.actions.ProductsCartAction
 import org.reduxkotlin.Reducer
 import org.reduxkotlin.typedReducer
 
 data class ProductsCartState(
-    val productsInCart: HashMap<Int, Int> = HashMap()
+    val productsInCart: HashMap<Int, Int> = HashMap(),
+    var list: List<Product> = emptyList()
 )
 
 val ProductsCartReducer: Reducer<ProductsCartState> = typedReducer<ProductsCartState, ProductsCartAction> { state, action ->
@@ -19,8 +21,17 @@ val ProductsCartReducer: Reducer<ProductsCartState> = typedReducer<ProductsCartS
             } else {
                 updatedProductsInCart[action.product.id] = 1
             }
+            val updatedList = if (state.list.none { it.id == action.product.id }) {
+                state.list + action.product
+            } else {
+                state.list
+            }
 
-            state.copy(productsInCart = HashMap(updatedProductsInCart))
+
+            state.copy(
+                productsInCart = HashMap(updatedProductsInCart),
+                list = updatedList
+                )
         }
         is ProductsCartAction.RemoveProduct -> {
             val updatedProductsInCart = state.productsInCart.toMutableMap()
