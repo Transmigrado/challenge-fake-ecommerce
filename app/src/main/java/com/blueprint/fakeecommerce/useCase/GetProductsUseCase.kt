@@ -8,7 +8,6 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import kotlin.coroutines.resume
-import kotlin.coroutines.resumeWithException
 import kotlin.coroutines.suspendCoroutine
 
 class GetProductsUseCase(private val apiService: ApiService): GetProductsUseCaseInterface {
@@ -23,12 +22,12 @@ class GetProductsUseCase(private val apiService: ApiService): GetProductsUseCase
                     if (response.isSuccessful && response.body() != null) {
                         cont.resume(response.body()!!.toList())
                     } else {
-                        cont.resumeWithException(Exception("Error response"))
+                        cont.resume(emptyList())
                     }
                 }
 
                 override fun onFailure(call: Call<MutableList<Product>>, t: Throwable) {
-                    cont.resumeWithException(t)
+                    cont.resume(emptyList())
                 }
             })
         }
