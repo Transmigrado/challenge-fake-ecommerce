@@ -1,3 +1,5 @@
+[![codebeat badge](https://codebeat.co/badges/861885d1-541f-4962-9d03-4489d0894b5c)](https://codebeat.co/projects/github-com-transmigrado-challenge-fake-ecommerce-main)
+
 ## levantar el proyecto
 
 - abrir proyecto en Android Studio Ladybug 2024.2.2
