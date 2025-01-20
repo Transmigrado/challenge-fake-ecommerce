@@ -9,7 +9,7 @@ import org.junit.Test
 
 class ProductsCartReducerTest {
 
-    val product = Product(
+    private val product = Product(
         id = 1,
         title = "Product 1",
         price = 100f,
@@ -53,7 +53,7 @@ class ProductsCartReducerTest {
 
         val newState = ProductsCartReducer(initialState, action)
 
-        assertEquals(1, newState.list.size) // List size should remain the same
+        assertEquals(1, newState.list.size)
     }
 
     @Test

@@ -2,7 +2,6 @@ package com.blueprint.fakeecommerce.useCases
 
 import com.blueprint.fakeecommerce.network.ApiService
 import com.blueprint.fakeecommerce.useCase.GetCategoriesUseCase
-import io.mockk.confirmVerified
 import io.mockk.every
 import io.mockk.mockk
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -60,7 +59,6 @@ class GetCategoriesUseCaseTest {
 
         assertEquals(emptyList<String>(), result)
 
-
     }
 
     @Test
@@ -74,12 +72,8 @@ class GetCategoriesUseCaseTest {
             callback.onResponse(call, response)
         }
 
-
         val result = getCategoriesUseCase.fetchCategories()
-
-
         assertEquals(emptyList<String>(), result)
-
 
     }
 }
