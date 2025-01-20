@@ -22,23 +22,28 @@ import com.blueprint.fakeecommerce.ui.components.container.CartButtonContainer
 @Composable
 fun DetailProduct(product: Product){
     Column{
-        Skeleteable(isLoading = false) { modifier ->
-            AsyncImage(
-                model = product.image,
-                contentDescription = product.title,
-                modifier = modifier
-                    .then(Modifier.fillMaxWidth())
-                    .then(Modifier.height(300.dp)),
-                contentScale = ContentScale.Crop
-            )
-        }
+        Column {
+            Skeleteable(isLoading = false) { modifier ->
+                AsyncImage(
+                    model = product.image,
+                    contentDescription = product.title,
+                    modifier = modifier
+                        .then(Modifier.fillMaxWidth())
+                        .then(Modifier.height(300.dp)),
+                    contentScale = ContentScale.Crop
+                )
+            }
 
-        Row(
-            modifier = Modifier.fillMaxWidth().padding(4.dp),
-            horizontalArrangement = Arrangement.SpaceBetween
-        ){
-            Text(product.title, fontSize = 20.sp, fontWeight = FontWeight.Bold)
-            Text("${product.price}")
+            Row(
+                modifier = Modifier.fillMaxWidth().padding(4.dp),
+                horizontalArrangement = Arrangement.SpaceBetween
+            ){
+                Text(product.title, fontSize = 20.sp, fontWeight = FontWeight.Bold)
+                Text("${product.price}")
+            }
+
+
+            Text(product.description, fontSize = 16.sp, fontWeight = FontWeight.Normal)
         }
 
         Row(
